@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build-in modals</title>
+</head>
+<body>
+<script>
+    // alert
+     window.alert("are you sure");
+
+    // prompt
+    let data = window.prompt("what is you name");
+    if(data === null) {
+        console.log("cancel");   
+    } else {
+        console.log(data);
+    }
+    
+    // Confirm
+    const status = window.confirm("Are you sure about banking details?");
+    if(status) {
+        console.log("yes:", status);
+        
+    } else {
+        console.log("no:", status);
+        
+    }
+
+</script>
+</body>
+</html>
