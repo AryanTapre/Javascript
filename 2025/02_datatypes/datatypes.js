@@ -5,7 +5,7 @@
 // there are 8 basic datatypes in javascript language...
 
 // Number
-    let age = 22;  // max (2^53-1)  
+    let age = 22;  // max (2^53-1) NaN 
 
 // bigInt
     let invoiceNumber = 12121231232323n; // arbitary values
