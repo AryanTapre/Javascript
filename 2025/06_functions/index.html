@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback functions</title>
+</head>
+<body>
+<script 
+    function ask(question, yes, no) {
+        if(confirm(question)) {
+            yes();
+        } else {
+            no();
+        }
+    }
+    
+    const showOk = () => {
+        alert("you agreed...");
+    } 
+    const showCancel = () => {
+        alert("You disagreed...");
+    }
+
+    ask("Do you Agree?", showOk, showCancel);
+
+</script>    
+</body>
+</html>
