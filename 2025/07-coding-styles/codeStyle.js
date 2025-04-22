@@ -32,6 +32,4 @@ show(parameters,
      one,
      after, 
      another 
-) {
-    
-}
+)
