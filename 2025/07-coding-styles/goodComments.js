@@ -1,3 +1,15 @@
+//NOTE: https://javascript.info/comments
+
+/** IMPORTANT:
+ * Comment this:
+ *      Overall architecture, high level overview
+ *      Function usage (parameters, body, and return values)
+ *      important solutions, especially when not immediately obvious
+ * Avoid comments:
+ *      That tells "how code works" and "what it does"
+ *      Put them in only if it’s impossible to make the code so simple and self-descriptive that it doesn’t require them.    
+ */
+
 
 /**
  * Returns x raised to the n-th power.
