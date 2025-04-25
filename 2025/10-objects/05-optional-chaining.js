@@ -19,7 +19,7 @@ const UserStatus = function() {
 
 const userStatus = new UserStatus();
 console.log(userStatus);
-console.log(userStatus.isAuth?.google?.value ?? undefined);
+console.log(userStatus.isAuth?.google?.value ?? undefined); 
 
 
 
