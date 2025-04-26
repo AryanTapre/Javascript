@@ -29,6 +29,8 @@ console.log( myBigInt.valueOf() );
 console.log( mySymbol.valueOf() );
 
 
+
+
 /*TODO: 1 Consider thw following code
     let str = "Hello"
     str.test = 5;
@@ -41,3 +43,9 @@ let str = "Hello";
 str.test = 5;
 console.log("Todo1 ->");
 console.log(str.test);
+
+
+
+
+
+console.log(isNaN("123"));
