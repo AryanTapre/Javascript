@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS grid layout-CSS: cascading styles sheets | MDN</title>
+
+    <link fetchpriority="high" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link fetchpriority="high" rel="stylesheet" href="./responsive.styles.css"/>
+    <link rel="icon" type="image/.png" href="https://developer.mozilla.org/apple-touch-icon.528534bba673c38049c2.png" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet">
+
+    <meta name="author" content="AryanTapre"/>
+    <meta name="keywords" content="css, grid, grid-template, grid-auto-row"/>
+    <meta name="description" content="The CSS grid layout modules excels at dividing a page into major regions or defining the relationships in terms of size, position, and layering between parts of control built form HTML primitives"/>
+    
+    <meta property="og:url" content="http://localhost:5500/2025/mdn"/>
+    <meta property="og:title"content="CSS grid layout-CSS: casacding style sheets | MDN "/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en-us"/>
+    <meta property="og:description" content="The CSS grid layout module excels at dividing a page into major regions or defining the relationship in terms of size, position, and layering between parts of a control built from HTML primitives.""/>
+    <meta property="og:image" content="https://developer.mozilla.org/mdn-social-share.d893525a4fb5fb1f67a2.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:height" content="1080"/>
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:iamge:alt" content="The MDN Web Docs logo, featuring a blue accent color, displayed on a solid black background."/>
+    <meta property="og:site_name" content="MDN Web Docs" />
+    
+    <meta rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout" />
+</head>
+<body>
+    <!--********************|Start Of Advertisement|********************-->
+    <section class="advertisement">
+        <p>Learn frontend development with high quality, interactive courses from <span id="advertisement-span">Scrimba.</span> Enroll now!</p>
+    </section>
+    <!--********************|End Of Advertisement|********************-->
+
+    <!--Start Of Header-->
+    <header>
+        <section class="main-header">
+            <section class="main-header-container">
+                <section class="left-header">
+                    <nav>
+                        <ul class="ul-left-header">
+                            <li>
+                                <a href="" title="go to references">References</a>
+                            </li>
+                            <li>
+                                <a href="#learn" title="go to learn">Learn</a>
+                            </li>
+                            <li>
+                                <a href="#Plus" title="go to plus">Plus</a>
+                            </li>
+                            <li>
+                                <a href="#curriculum" title="go to curriculum">Curriculum</a>
+                            </li>
+                            <li>
+                                <a href="#blog" title="go to blog">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#tools" title="go to tools">Tools</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="right-header">
+                    <section class="theme-switcher" title="switch to dark/white mode">Theme</section>
+                    <section class="header-search">
+                        <input type="text" id="header-search-data" class="header-search-data" placeholder="search" title="type here to search"/>
+                    </section>
+                    <section class="header-user-menu">
+                        <img class="header-user-menu-logo" alt="user" src="./user-logo.png" title="user-account"/>
+                    </section>
+                </section>
+                <!-- Start of hamburger -->
+                <section class="hamburger">
+                        <img id="hamburger-icon" alt="hamburger-icon" title="more details" src="./hamburger-icon.png" />
+                        <ul id="nav-links-hamburger">
+                            <section class="data">
+                                <li>
+                                    <a><section class="theme-switcher" title="switch to dark/white mode">Theme</section></a>
+                                </li>
+                                <li>
+                                    <a><section class="header-search">
+                                        <input type="text" id="header-search-data" class="header-search-data-hamburger" placeholder="search" title="type here to search"/>
+                                    </section></a>
+                                </li>
+                                    <li>
+                                    <a><section class="header-user-menu">
+                                        <img class="header-user-menu-logo" alt="user" src="./user-logo.png" title="user-account"/>
+                                    </section></a>
+                                </li> 
+                                <li style="width: 100%;"><hr></li>
+                                
+                                <li><a href="#references">References</a></li>
+                                <li><a href="#about">Learn</a></li>
+                                <li><a href="#plus">Plus</a></li>
+                                <li><a href="#curriculum">Curriculum</a></li>
+                                <li><a href="#blog">Blog</a></li>
+                                <li><a href="#tools">Tools</a></li>
+                                <li style="width: 100%;"><hr></li>
+                                <li>
+                                    <a><span class="fa-regular fa-bookmark" style="color: #FFFFFF;"></span>&nbsp; Save</a>
+                                </li>
+                                <li>
+                                    <a href="" title="current page language"><span class="fa-solid fa-globe" style="color: #ffffff;"></span>&nbsp;English(US)</a>
+                                </li>
+                            </section> 
+                        </ul>
+                   </section>
+            </section>
+            <!-- End of hamburger -->
+        </section>
+    </header>
+    <!--End Of Header-->
+
+    <!--Start of Sub-Header-->
+    <section class="sub-header">
+        <section class="sub-header-container">
+            <section class="left-sub-header">
+                <nav>
+                    <ul class="ul-left-sub-header">
+                        <li class="ul-left-sub-header-item1">
+                            <a href="" title="to go references">References</a>
+                        </li>
+                          <li class="ul-left-sub-header-item2">
+                            <a href="" title="go to CSS">CSS</a>
+                        </li>
+                         <li>
+                            <a href="" title="go to CSS grid layout" >CSS grid layout</a>
+                        </li> 
+                    </ul>
+                </nav>
+            </section>
+            <section class="right-sub-header">
+                <nav>
+                    <ul class="ul-right-sub-header">
+                        <li>
+                            <a class="ul-right-sub-header-save-button" href="" title="bookmark current page"><span class="fa-regular fa-bookmark" style="color: #FFFFFF;"></span>&nbsp; Save</a>
+                        </li>
+                        <li>
+                            <a href="" title="current page language"><span class="fa-solid fa-globe" style="color: #ffffff;"></span>&nbsp;English(US)</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </section>
+    </section>
+    <!--End of Sub-Header-->
+    <script>
+    const menu = document.getElementById("hamburger-icon");
+    const navlinks = document.getElementById("nav-links-hamburger");
+    let isMenuOpen = false;
+    console.log("default:",isMenuOpen);
+    
+    menu.addEventListener("click",() => {
+        if(isMenuOpen == false) {
+            navlinks.classList.toggle("show");
+            // navlinks.classList.add("show");
+            isMenuOpen = true;
+        } else {
+            navlinks.classList.remove("show");
+            // navlinks.style.display = "none";
+            // navlinks.style.transition = "none";
+            isMenuOpen = false;
+        }
+    });
+
+    </script>
+</body>
+</html>
