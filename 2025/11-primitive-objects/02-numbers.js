@@ -1,3 +1,6 @@
+import readline from 'readline';
+import { isStringObject } from 'util/types';
+
 /** NOTE:
  *  https://javascript.info/number
  *  
@@ -59,4 +62,36 @@ console.log( parseInt('100px') );
 console.log( parseFloat('100.12') );
 
 
+//TODO: 1 Create a script that prompts the visitor to enter two numbers and then shows their sum.
+// let numberA = Number(prompt("The first number ?", 0));
+// let numberB = Number(prompt("The second number ?", 0));
+// alert(numberA + numberB);
 
+
+
+/** TODO: 2 Create a function readNumber which prompts for a number until the visitor enters a valid numeric value.
+
+    The resulting value must be returned as a number.
+    The visitor can also stop the process by entering an empty line or pressing “CANCEL”. In that case, the function should return null. 
+ */
+
+function readNumber() {
+    let num;
+    do {
+        num = prompt("Enter a number please ?", 0);
+    }while( !isFinite(num) );
+
+    if (num == null || num == '') {
+        return null;
+    }
+    
+    return Number(num);
+}
+
+
+//TODO: 3 custom random number generator with min-max range defined
+
+function customRandom(minR, maxR) {
+    return Math.round((Math.random() * (maxR - minR)) + minR);
+}
+console.log(customRandom(5, 10));
