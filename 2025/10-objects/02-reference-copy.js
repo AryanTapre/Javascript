@@ -46,3 +46,27 @@ console.log(laptopClone);
 let laptopClone2 = structuredClone(laptop);
 console.log(laptopClone2);
 
+
+
+
+let cars = ['fortuner','innova'];
+cars.aryan = "aryan";
+
+for (let x of cars) {
+    console.log(x);
+}
+
+
+console.log(cars.length);
+cars[100] = "100";
+console.log(cars);
+
+Array.prototype.aryan = function length() {
+    console.log("this is Aryan...");
+    
+}
+
+let x = new Array();
+
+x.aryan();
+

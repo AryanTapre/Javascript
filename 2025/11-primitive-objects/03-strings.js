@@ -44,7 +44,6 @@ console.log(single.slice(0, 5));
 console.log(single.substring(0, 5));
 
 
-
 //FIXME: STRING COMPARISIONS
 
 const s1 = new String("aryan");
