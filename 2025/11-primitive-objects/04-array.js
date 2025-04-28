@@ -133,3 +133,9 @@ function replaceMiddleElement(arr, replaceString) {
 }
 replaceMiddleElement(styles, "arya");
 console.log(styles);
+
+
+
+//---------------------------------------------METHODS-----------------------------------------
+
+
