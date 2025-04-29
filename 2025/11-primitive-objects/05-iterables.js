@@ -97,7 +97,7 @@ class CleanLogLines {
                 while (index < lines.length) {
                     if (lines[index]?.length != 0) {
 
-                        return { done: false, value: lines[index] };                        
+                        return { done: false, value: lines[indexls] };                        
                     }
                 } 
                 return { done: true };
