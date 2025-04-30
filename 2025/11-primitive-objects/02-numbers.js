@@ -41,7 +41,7 @@ console.log("Roundings ->");
 
 console.log( Math.ceil(0.5) );
 console.log( Math.floor(0.5) );
-console.log( Math.round(0.5) );
+console.log( Math.round(0.4) );
 
 let num2 = 12.34567890;
 console.log(num2.toFixed(2));
