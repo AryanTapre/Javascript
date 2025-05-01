@@ -49,3 +49,4 @@ console.log(test);
     console.log("IIFE 4 using Unary Operator");
     
 }();
+
