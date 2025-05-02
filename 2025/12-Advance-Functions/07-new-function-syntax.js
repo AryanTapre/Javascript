@@ -25,3 +25,8 @@ function callme() {
 
 const x = callme();
 console.log( x() );
+
+
+// callme.call();
+// callme.apply();
+// callme.bind();
