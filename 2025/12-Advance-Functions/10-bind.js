@@ -30,4 +30,30 @@ console.log( newMul(4) );
 
 
 
+//TODO:
+// The call to askPassword() in the code below should check the password and then call user.loginOk/loginFail depending on the answer.
 
+
+let user2 = {
+    name: "john",
+
+    loginOk() {
+        console.log(`${this.name} logged in`);
+        
+    },
+    loginFail() {
+        console.log(`${this.name} failed to log in`);
+        
+    },
+};
+
+function askPassword(ok, fail) {
+    let password = prompt("Password please ?", "");
+    if (password === "rockstar") {
+        ok();
+    } else {
+        fail();
+    }
+}
+
+askPassword( user2.loginOk.bind(user2), user2.loginFail.bind(user2) );
