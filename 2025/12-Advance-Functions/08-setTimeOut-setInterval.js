@@ -37,3 +37,28 @@ setTimeout(function run() {
 },0)
 
 
+
+
+// FUNCTION CACHING 
+function slow(x) {
+    console.log(`slow() called with value : ${x}`);
+    return x;
+}
+
+function wrapperCacheSlow(func) {
+    let cache = new Map();
+    
+    return function(x) {
+        if ( cache.has(x) ) {
+            return cache.get(x);
+        } 
+        let result = func(x);
+        cache.set(x, result);
+        return result;
+    };
+}
+
+const one = wrapperCacheSlow(slow);
+console.log( one(1) );
+console.log( one(1) );
+
