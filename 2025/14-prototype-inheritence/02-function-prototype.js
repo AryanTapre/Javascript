@@ -39,7 +39,8 @@ const bmw = new Car();
 
 console.log(bmw.__proto__ === Car.prototype);
 console.log(Car.prototype.constructor === Car);
-console.log(bmw.constructor === car);
+console.log(bmw.constructor === Car);
 
 
 
+console.log(Array.prototype.constructor === Array);
