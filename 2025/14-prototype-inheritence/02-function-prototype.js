@@ -9,6 +9,10 @@ function Rabbit(name) {
     this.name = name;
 }
 
+console.log(Object.getPrototypeOf(Rabbit) == Object.prototype);
+
+
+
 //Rabbit.prototype = animal;
 
 let rabbit = new Rabbit("snow");
@@ -22,6 +26,20 @@ console.log(Rabbit.prototype.constructor);
 //Rabbit.prototype.constructor = animal;
 
 console.log(Rabbit.prototype.constructor == Rabbit);
+
+
+
+// NOTE:
+
+
+function Car() {};
+Car.prototype.drive = () => console.log("vroom");
+
+const bmw = new Car();
+
+console.log(bmw.__proto__ === Car.prototype);
+console.log(Car.prototype.constructor === Car);
+console.log(bmw.constructor === car);
 
 
 

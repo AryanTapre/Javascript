@@ -18,6 +18,9 @@ function outer() {
 }
 outer();
 
+
+
+
 console.log("==> \n");
 
 let vehicle = {
@@ -26,6 +29,9 @@ let vehicle = {
     engine : null,
     mileage: "13.3"
 };
+
+console.log(Object.getPrototypeOf(vehicle) == Object.prototype);
+
 
 let car = {
     transmissionType: null,
