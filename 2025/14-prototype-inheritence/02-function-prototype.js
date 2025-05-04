@@ -11,7 +11,16 @@ function Rabbit(name) {
 
 console.log(Object.getPrototypeOf(Rabbit) == Object.prototype);
 
-
+function demo() {
+    let proto = this;
+    while( (proto = Object.getPrototypeOf(proto))!= null ) {
+        console.log(proto);
+    }
+    if(proto == null) {
+        console.log(proto);
+    }   
+}
+demo();
 
 //Rabbit.prototype = animal;
 
