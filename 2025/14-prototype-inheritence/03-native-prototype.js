@@ -9,6 +9,10 @@ console.log(obj.__proto__.__proto__ === null);
 
 
 
+
+
+
+
 // TODO: BORROWING Object Methods....
 function func() {
     console.log("before: " +arguments);
