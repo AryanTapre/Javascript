@@ -20,26 +20,27 @@ class Clock {
         }
         if (seconds < 10) {
             seconds = '0' + seconds;
-        }   
+        }
 
         let output = this.template
-            .replace('hh', hours)
-            .replace('mm', minutes)
-            .replace('ss', seconds);
+            .replace("hh", hours)
+            .replace("mm", minutes)
+            .replace("ss", seconds);
         
         console.log(output);
-    }
+    }   
 
-    stop() {
-        clearTimeout(this.timer);
-    }
     start() {
-        const timerX  = () => {
+        const timerX = () => {
             this.render();
             setTimeout(timerX, 1000);
         }
         this.timer = setTimeout(timerX, 1000);
     }
-};
 
-new Clock("hh:mm:ss").start();
+    stop() {
+        clearTimeout(this.timer);
+    }
+};  
+
+new Clock("hh/mm/ss").start();
