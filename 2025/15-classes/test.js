@@ -46,3 +46,7 @@ class Rabbit2 extends Animal2 {
 };
 new Animal2();
 new Rabbit2();
+
+
+
+
