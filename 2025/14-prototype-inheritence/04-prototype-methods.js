@@ -56,3 +56,18 @@ for (let x in dictionary) {
 
 
 
+function outer() {
+    const outer = "outer";
+
+    function demo() {
+        let proto = this;
+        while( (proto = Object.getPrototypeOf(proto)) != null ) {
+            console.log(proto);
+        }
+        if(proto == null) {
+            console.log(proto);
+        }   
+    }
+    demo();   
+}
+outer();

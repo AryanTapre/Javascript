@@ -49,7 +49,7 @@ function defer(func, delayWith) {
         // }, delayWith )        
 
         setTimeout(() => {    //NOTE: ARROW FUNCTION IS MORE CLEANER
-            func.apply(this);
+            func.apply(this, ...arguments);
         }, delayWith);
     }      
 }

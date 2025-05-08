@@ -26,6 +26,10 @@ function showPrototypes(myClass, obj) {
     while ((currentProto = Object.getPrototypeOf(obj)) != null ) {
         console.log(currentProto);        
         obj = currentProto;
+    }this.name = name;
+    this.hello = function sayHi() {
+        console.log(this.name);
+        
     }
 }
 
