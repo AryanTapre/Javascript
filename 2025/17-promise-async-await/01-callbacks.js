@@ -13,3 +13,5 @@ loadData("frontman", function (error, result) {
         console.log(`the data is : ${result}`);
     }
 });
+E
+
