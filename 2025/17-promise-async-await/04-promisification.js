@@ -12,25 +12,48 @@
 // main("Aryan", callback);
 
 
-function promisify(func) {
-    return function(...args) {
-        return new Promise((resolve, reject) => {
-            function callback() {
-                console.log(`The data is : ${this.name}`);   
-            }
+// function promisify(func) {
+//     return function(...args) {
+//         return new Promise((resolve, reject) => {
+//             function callback() {
+//                 console.log(`The data is : ${this.name}`);   
+//             }
 
-            args.push(callback);
-            func.call(this, ...args);
-            resolve(this.name)
-        });    
-    };
-}
+//             args.push(callback);
+//             func.call(this, ...args);
+//             resolve(this.name)
+//         });    
+//     };
+// }
+
+// function main(name, callback) {
+//     this.name = name;
+//     callback();
+// }
+
+
+// const proMain = promisify(main);
+// proMain("AryanTapre").then((d) => console.log("x:" + d))
+
 
 function main(name, callback) {
     this.name = name;
     callback();
 }
 
+function promisify(func) {
+    return function(...args) {
+        return new Promise((resolve, reject) => {
+            function callback() {
+                console.log("The data is :" + this.name);   
+            }
+            args.push(callback);
+            func.call(this, ...args);
+            resolve(this.name);
+        });       
+    };
+}
 
-const proMain = promisify(main);
-proMain("AryanTapre").then((d) => console.log("x:" + d))
+
+let x = promisify(main);
+x("AryanTapre");
