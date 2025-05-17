@@ -147,4 +147,3 @@ Object.setPrototypeOf(admin, user_proxy);
 
 console.log(admin.name);
 
-
