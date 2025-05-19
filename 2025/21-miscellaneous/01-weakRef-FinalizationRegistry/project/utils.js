@@ -252,6 +252,11 @@ export const loadImage = async (url) => {
     }
 };
 
+
+
+
+
+
 export const weakRefCache = (fetchImg) => {
     const imgCache = new Map();
     const registry = new FinalizationRegistry(({ imgName, size, type }) => {

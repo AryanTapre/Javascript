@@ -1,8 +1,5 @@
-"use strict";
-// https://javascript.info/types
 
-
-// there are 8 basic datatypes in javascript language...
+//NOTE:  there are 8 basic datatypes in javascript language...
 
 // Number
     let age = 22;  // max (2^53-1) NaN 
