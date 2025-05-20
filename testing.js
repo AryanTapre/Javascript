@@ -1,18 +1,12 @@
-function readUserName(firstName, lastName) {
-    console.log(`${firstName} ${lastName}`);
-} 
+console.log("aryuatapre");
 
-function readUserNameWrapper(func) {
-    return function(...args) {
-        console.log("before calling readUserName() function...");
 
-        func.call(this, ...args);
-        
-        console.log("after calling readUserName() function...");
-    }
+let val = 2;
+console.log(typeof +val);
+console.log(typeof val);
+
+
+if ("0" == 0) {
+    console.log("yes");
+    
 }
-
-const x = readUserNameWrapper(readUserName);
-x("Aryan", "Tapre");
-
-

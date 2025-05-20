@@ -5,6 +5,16 @@
 const user = {name:"austin"};
 const admin = user; // only reference is assigned to 'admin'
 
+let body;
+body = Object.create({}, Object.getOwnPropertyDescriptors(user));
+
+console.log("body =>");
+
+for (let key in body) {
+    console.log(key);
+}
+
+
 console.log(user === admin);
 
 //NOTE: cloning an object
@@ -69,4 +79,35 @@ Array.prototype.aryan = function length() {
 let x = new Array();
 
 x.aryan();
+
+const userA = {
+    name : "steve Jobs",
+    sizes: {
+        height: 182,
+        width: 50
+    },
+    //hero: () =>{ console.log("I'm a Hero!"); }
+};
+
+
+const l1 = Object.assign({}, userA);
+const l2 = Object.create({}, Object.getOwnPropertyDescriptors(userA));
+
+console.log("...printing l1... => ");
+for (const key in l1.sizes) {
+    console.log(`${key}: ${l1.sizes[key]}`);   
+}
+
+console.log("...printing l2... => ");
+for (const key in l2.sizes) {
+    console.log(`${key}: ${l2.sizes[key]}`);   
+}
+
+
+console.log(l1.sizes == l2.sizes);
+
+// IMPORTANT
+const l3 = structuredClone(userA);
+
+console.log(l1 == l3.sizes);
 

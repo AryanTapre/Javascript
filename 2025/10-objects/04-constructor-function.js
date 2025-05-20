@@ -1,5 +1,3 @@
-import readline from 'readline';
-
 /**NOTE: Constructor Function
  * - named with capital letter first
  * - Should be executed only with 'new' operator
@@ -88,3 +86,8 @@ function Calculator() {
 
 let calculator = new Calculator();
 
+
+
+
+
+  
