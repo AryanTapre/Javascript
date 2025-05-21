@@ -23,6 +23,7 @@ console.log( myMap.has(1) );
 
 //myMap.clear()
 
+
 myMap.forEach((value, key, map) => {
     console.log(value +":"+key); 
 })

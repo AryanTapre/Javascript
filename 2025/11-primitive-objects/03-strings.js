@@ -1,5 +1,8 @@
 // https://javascript.info/string
 
+
+
+
 let single  = 'single string';
 let double = "double string";
 let backticks = `hello, ${double}`;
@@ -94,6 +97,19 @@ function extractCurrencyValue(str) {
 }    
 
  console.log( extractCurrencyValue("$120") === 120 );
+
+
+// String are immutable (can't change a character)
+let nom = "abc";
+//nom.at(0) = "X";  IMPORTANT ERROR here
+
+
+console.log(String.fromCodePoint(65)); // return 'A'
+console.log("A".codePointAt(0)); // returns 65
+
+nom.replace("a","X");
+console.log(nom);
+
 
 
 

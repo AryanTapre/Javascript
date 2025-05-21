@@ -31,7 +31,7 @@ console.log( customDate.getTime() );
 
 console.log( ((Math.random() * 4 )  ).toFixed(0) );
 
-let today = new Date();
+let today =  new Date();
 today.setFullYear(2025, 3, 30);
 today.setHours(19, 30, 48);
 console.log(today);
@@ -44,3 +44,10 @@ let newDate = new Date();
 console.log(+newDate);
 
 console.log( Date.parse("2024-07-25T00:12:45.") );
+
+const currentVal = new Date();
+
+console.log(`${currentVal.getHours()} H : ${currentVal.getMinutes()} M : ${currentVal.getSeconds()} S`);
+
+
+

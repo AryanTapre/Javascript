@@ -1,5 +1,8 @@
 //NOTE: Baisc of primitive
 
+
+
+
 let myString  =   String("AryanTapre");
 let myNumber  =   Number(24072002);
 let myBigInt  =   BigInt(12127832347283467267472637462376427364723423423434);
@@ -48,4 +51,5 @@ console.log(str.test);
 
 
 
-console.log(isNaN("123"));
+console.log( global.isNaN("123") );
+
