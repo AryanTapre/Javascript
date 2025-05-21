@@ -23,7 +23,7 @@ const objV = Object.getOwnPropertySymbols(InstagramUser);
 for (const keys of objV) {
     console.log(keys, objV[keys]);
 }
-gn({}, userx);
+
 console.log("-> \n");
 
 const Keys = Reflect.ownKeys(InstagramUser);

@@ -21,8 +21,6 @@ const userStatus = new UserStatus();
 console.log(userStatus);
 console.log(userStatus.isAuth?.google?.value ?? undefined); 
 
-
-
 const user = {
     profile: {
         name: "Aryan",
@@ -34,3 +32,6 @@ const user = {
 
 const instagram = user.profile?.social.instagram ?? "Not Linked";
 console.log(instagram);
+
+console.log(user.address);
+
