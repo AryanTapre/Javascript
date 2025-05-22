@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure real-life</title>
+</head>
+<body>
+
+<script>
+    function outer() {
+        let count = 0;
+        function inner() {
+            console.log("current cout value = ", count);
+            return ++count;
+        }
+        
+        return inner;
+    }
+    const data = outer();
+    console.log(data());
+    
+</script>
+</body>
+</html>

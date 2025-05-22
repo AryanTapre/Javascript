@@ -70,3 +70,53 @@ function addToCart(customerName, ...cartItems) {
 
 addToCart("Aryan Tapre", "laptop","mouse","T-shirt","foot wear", "Wrist watch");
     
+
+let xop = {
+    name: "raju",
+    age: 22,
+    length: 2,
+};
+
+const dt = Array.from(xop);
+
+for (let x of dt) {
+    console.log(x);
+}
+
+
+// const RESOURCE = "https://google.com/search?q=elon+musk"
+
+// consumeResource();
+
+// function consumeResource() {
+//     console.log(`resource = ${RESOURCE}`);
+// }
+
+
+
+
+
+
+function consumeResource() {
+    x = {
+        name: "x",
+        age: "x1",
+    }
+    return function() {
+        console.log("name = ", this.x.name);
+        console.log("age =  ", this.x.age);        
+    }
+}
+
+const registry = new FinalizationRegistry((x="I'm no more") => {
+    console.log(x);
+})
+
+
+
+let data = consumeResource();
+registry.register(data);
+data = null;
+
+
+
