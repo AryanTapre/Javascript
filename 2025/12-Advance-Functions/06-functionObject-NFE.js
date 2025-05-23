@@ -46,5 +46,7 @@ console.log( x() );
 
  
 
+console.log(createCounter.constructor);
+console.log(createCounter.prototype.constructor);
 
 

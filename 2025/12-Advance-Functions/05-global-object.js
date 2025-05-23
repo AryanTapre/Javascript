@@ -11,3 +11,9 @@ console.log(globalThis);
 
 
 aryan();
+
+lol();
+function lol () {
+    console.log("hello");
+    
+}
