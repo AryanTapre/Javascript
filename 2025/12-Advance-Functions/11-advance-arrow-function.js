@@ -56,3 +56,20 @@ function defer(func, delayWith) {
 
 const oneSec = defer(user.sayHi, 1000);
 oneSec.call(user);
+
+
+
+const dt = ["aryan", "tapre", "1234", `{ name: "gardev-singh" }`];
+function sendMeWithDt(value, index, array) {
+    console.log(`this = ${this}`);   
+    if (this === globalThis) {
+        console.log("GL");
+    } else {
+        console.log("not GL");
+        
+    }
+    console.log(value);   
+}
+
+dt.forEach(sendMeWithDt);
+
