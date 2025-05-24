@@ -30,3 +30,29 @@ console.log( x() );
 // callme.call();
 // callme.apply();
 // callme.bind();
+
+
+
+
+let getD = new Function(`
+  function hola() {
+    console.log("this is Hola from me!");
+  }
+  hola();
+`);
+
+getD(); 
+
+
+function outer() {
+  const DATA = "DATA";
+  
+  let inner =  new function () {
+    console.log(DATA); 
+  }
+  return inner;
+}
+
+
+
+

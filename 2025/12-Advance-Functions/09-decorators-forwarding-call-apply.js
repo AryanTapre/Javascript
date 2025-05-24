@@ -5,6 +5,12 @@
 //IMPORTANT: CALL FORWARDING, DECORATORS
 function logger(func) {
     return function(...arguments) {
+        if (this === globalThis) {
+            console.log("this pointing to global obj");            
+        } else {
+            console.log("this points to an object");
+        }
+
         let time = new Date().getTime();
         console.log(`function called at: ${time}`);    
         func(...arguments);
@@ -71,6 +77,12 @@ function cachingDecorator(func) {
     let cache = new Map();
 
     return function(...arguments) {
+        if (this === globalThis) {
+            console.log("this pointing to global obj");            
+        } else {
+            console.log("this points to an object");
+        }
+
         if (cache.has(...arguments)) {
             return cache.get(...arguments);
         }
