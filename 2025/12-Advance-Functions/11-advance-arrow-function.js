@@ -65,11 +65,14 @@ function sendMeWithDt(value, index, array) {
     if (this === globalThis) {
         console.log("GL");
     } else {
-        console.log("not GL");
-        
+        console.log("not GL"); 
     }
     console.log(value);   
 }
 
 dt.forEach(sendMeWithDt);
+
+
+
+
 
