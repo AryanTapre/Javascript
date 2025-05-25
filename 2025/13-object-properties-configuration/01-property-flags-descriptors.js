@@ -37,7 +37,47 @@ Object.defineProperties(game, {
 console.log(game);
 console.log(Object.getOwnPropertyDescriptors(game));
 
+let A = new Object({
+    name: "A",
+    age: 22,
+    location: "USA"
+})
+
+const B = Object.defineProperties({}, Object.getOwnPropertyDescriptors(A));
+
+for (let x in A) {
+    console.log(`${x}: ${A[x]}`);   
+}
+
+for (let x in B) {
+    console.log(`${x}: ${B[x]}`);   
+}
+
+"use strict";
+console.log(Object.getOwnPropertyDescriptors(B));
+
+Object.defineProperty(B,"location", {
+    configurable: false,
+    //writable: false
+})
+
+B.location = "Japan";
+console.log(Object.getOwnPropertyDescriptors(B));
+
+delete B.location;
+console.log(Object.getOwnPropertyDescriptors(B));
+
+console.log(this);
 
 
+let userx = {
+    name: "userx"
+};
 
+Object.seal(userx);
 
+userx.age = 22;
+
+console.log(JSON.stringify(userx, null, 2));
+console.log(Object.isSealed(userx) );
+  

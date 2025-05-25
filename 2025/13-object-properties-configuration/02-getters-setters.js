@@ -45,4 +45,6 @@ function User(name, birthday) {
 let john = new User("John", new Date("2002-07-24"));
 
 console.log( john.birthday ); // birthday is available
-console.log( john.age );  
+console.log( john.age ); 
+
+
