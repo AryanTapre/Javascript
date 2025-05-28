@@ -30,7 +30,7 @@ let vehicle = {
     mileage: "13.3"
 };
 
-console.log(Object.getPrototypeOf(vehicle) == Object.prototype);
+console.log(Object.getPrototypeOf(vehicle) === Object.prototype);
 
 
 let car = {
@@ -47,9 +47,7 @@ let fortuner = {
     carType: "SUV",
     fuelType: "diesel",
     noOfWheels: "four",
-    buildQuality: "super",
-    
-   
+    buildQuality: "super", 
 };
 
 Object.setPrototypeOf(car,vehicle);
@@ -64,6 +62,22 @@ for (const key in fortuner) {
     } else {
         console.log("Not our: ", key);
     }
+}
+
+
+let dummy = {
+    name: "dummy",
+    age: 22
+};
+
+let protovalue = Object.getPrototypeOf(dummy);
+console.log(protovalue.constructor === dummy);
+
+
+
+while (protovalue) {
+    console.log("proto :", protovalue);
+    protovalue = Object.getPrototypeOf(protovalue);
 }
 
 
