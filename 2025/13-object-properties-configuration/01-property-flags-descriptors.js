@@ -80,4 +80,28 @@ userx.age = 22;
 
 console.log(JSON.stringify(userx, null, 2));
 console.log(Object.isSealed(userx) );
+
+
+
+// working with writiable + configurable flags....
+// configurable = can't modify + delete properties
+// writiable = can't reassign values to properties
+
+let victus = {
+    name: "HP victus 15 gaming",
+    display: "1920 * 1080",
+    ram: "16GB",
+    rom: "500GB"
+};
+
+Object.defineProperty(victus, "ram", {
+    configurable: false
+});
+
+delete victus.ram;  // NOTE: Can't delete ram prop
+
+victus.ram = "32GB";
+console.log( Object.getOwnPropertyDescriptors(victus) );
+
+
   
