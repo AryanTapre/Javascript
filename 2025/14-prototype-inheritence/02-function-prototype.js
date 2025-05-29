@@ -9,7 +9,7 @@ function Rabbit(name) {
     this.name = name;
 }
 
-console.log(Object.getPrototypeOf(Rabbit) == Object.prototype);
+console.log(Object.getPrototypeOf(Rabbit));
 
 function demo() {
     let proto = this;

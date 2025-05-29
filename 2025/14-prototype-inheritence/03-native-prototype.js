@@ -20,3 +20,17 @@ function func() {
     console.log(arguments);
 };
 func(1,2);
+
+
+console.log("Native prototype borrowing =>");
+
+
+let objx = new Object({
+    0: "aryan",
+    1: 22,
+    length: 2,
+});
+
+objx.join = Array.prototype.join;
+
+console.log(objx.join(','));

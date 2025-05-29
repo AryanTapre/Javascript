@@ -81,3 +81,14 @@ while (protovalue) {
 }
 
 
+console.log( Object.getOwnPropertyDescriptors(Object.prototype.hasOwnProperty) );
+
+Object.defineProperty(Object.prototype, "hasOwnProperty", {
+    writable: true,
+    enumerable: true,
+    configurable: true
+})
+
+console.log("After defining Object.defineProerty =>");
+
+console.log( Object.getOwnPropertyDescriptors(Object.prototype.hasOwnProperty) );
