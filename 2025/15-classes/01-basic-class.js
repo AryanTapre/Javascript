@@ -11,7 +11,7 @@ class User {
     }
 };
 
-console.log(typeof User);
+console.log(typeof User); // Function
 console.log(User.prototype.constructor === User);
 console.log(User.prototype.sayHi);
 console.log(Object.getOwnPropertyNames(User.prototype));

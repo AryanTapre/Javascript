@@ -31,3 +31,26 @@ class Dog extends Animal {
 new Dog().run();
 new Dog().animalName;
     
+
+
+class A {
+    name = "A";
+    constructor() {
+        console.log(`HERO : ${this.name}`);
+    }
+}
+class B extends A {
+    name = "B";
+    constructor(...args) {
+        super(...args);
+        console.log(`HERO 2 : ${this.name}`);   
+    }
+}
+
+new A();
+new B();
+
+
+// IMPORTANT: UNDER THE HOOD OF SUPER KEYWORD
+// super.sayHi() === Object.getPrototypeOf([[HomeObject]]).sayHi.call(this);
+
