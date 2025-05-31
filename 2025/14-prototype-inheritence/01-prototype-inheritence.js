@@ -92,3 +92,4 @@ Object.defineProperty(Object.prototype, "hasOwnProperty", {
 console.log("After defining Object.defineProerty =>");
 
 console.log( Object.getOwnPropertyDescriptors(Object.prototype.hasOwnProperty) );
+
