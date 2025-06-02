@@ -48,24 +48,29 @@ class Validator {
 // Email Validator
 class EmailValidator extends Validator {
     validate() {
-       console.log(`email validator: ${this._field} : ${this._value}`);
-       
-        
-        if (!this._value.includes("@")) {
-            return new ValidationError(`Invalid ${this.field} to format.`);
-        }
-        return null;        
+        try {
+            if (!this._value.includes("@")) {
+                return new ValidationError(`Invalid ${this.field} to format.`);
+            }
+            return null;        
+        } catch (error) {
+            return new ValidationError(`Validation failed for ${this._field}: ${error.message}`);
+        }    
     }
 }
 
 // Age Validator
 class AgeValidator extends Validator {
     validate() {
-       console.log(`Age validator: ${this._field} : ${this._value}`);
-        if (!this._value || this._value < 18) {
-            return new ValidationError(`${this._field} must be 18 or above.`);
-        }
-        return null;
+        try {
+            if (!this._value || this._value < 18) {
+                return new ValidationError(`${this._field} must be 18 or above.`);
+            }
+            return null;
+        } catch (error) {     
+            return new ValidationError(`Validation failed for ${this._field}: ${error.message}`);
+        }    
+        
     }
 }
 
