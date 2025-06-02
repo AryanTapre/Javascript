@@ -41,6 +41,11 @@ showPrototypes(User, aryan);
 //================== REAL WORLD USE CASE=========================
 // TYPE CHECKING IN FUNCITON PARAMETER
 
+
+class PaymentMethod {}
+class PayPay extends PaymentMethod {}
+class SBICreditCard extends PaymentMethod {}
+
 function processPayment(paymentMethod) {
     if (!(paymentMethod instanceof PaymentMethod)) {
         throw new Error(`Invalid payment method`);
@@ -48,9 +53,6 @@ function processPayment(paymentMethod) {
     // process payment...
 }
 
-class PaymentMethod {}
-class PayPay extends PaymentMethod {}
-class SBICreditCard extends PaymentMethod {}
 
 console.log( processPayment(new PayPay()) );
 

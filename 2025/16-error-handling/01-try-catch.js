@@ -45,7 +45,7 @@ try {
 
 // IMPORTANT: GLOBAL CATCH...
 
-console.log(rocket);
+//
 
 
 process.on("uncaughtException", (error) => {
@@ -68,3 +68,22 @@ process.on("uncaughtException", (error) => {
 
 //   readData();
 //</script>
+
+
+
+
+
+class A {
+    constructor(...args) {
+        console.log("Class A called... with args:" , args);
+    }
+}
+class B extends A {
+    constructor(...args) {
+        super(...args);
+        console.log("Class B called...");         
+    }
+}
+
+
+const b =  new B("Aryantapre");
