@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>under the hood</title>
+</head>
+<body>
+<script>
+    const promise = new Promise((resolve, reject) => {
+        this.setTimeout(() => {
+            console.log("I got resolved after 1000 ms");
+        }, 1000)
+    });
+
+    promise
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
+
+</script>
+</body>
+</html>
