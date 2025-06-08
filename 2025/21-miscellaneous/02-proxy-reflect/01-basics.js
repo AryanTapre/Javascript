@@ -147,3 +147,55 @@ Object.setPrototypeOf(admin, user_proxy);
 
 console.log(admin.name);
 
+//========================= REAL WORLD=================================
+
+const usery = {
+    name: "Aryan",
+    greet() {
+        return `Hi, ${this.name}`;
+    }
+};
+
+const useryHandler = {
+    get(target, prop, receiver) {
+        console.log(`Accessed ${prop}`);
+
+        return Reflect.get(target, prop, receiver);
+    }
+}
+
+const proxy = new Proxy(usery, useryHandler);
+console.log(proxy.greet());
+
+
+
+
+/**  Whether Web App - Fetches Based On Location
+ *   URL:
+ *      https://api.weatherapi.com/v1/current.json?key=cf472f1d99374a7693a112657250806&q=Surat&aqi=nov
+ * 
+ *   TOPIC COVERED: CURRYING to Fix some parameters such as domain, key cause' they are repeative. 
+ */
+
+function fetchData(baseURL, apiVersion, endPoint, apiKey, query) {
+      return fetch(`${baseURL}/${apiVersion}/${endPoint}${apiKey}&q=${query}`)
+                .then(res => res.json());       
+}
+
+function curryWhether(func) {
+    return function curried(...args) {
+        if (args.length >= func.length) {
+            return func.apply(this, args);
+        } else {
+            return function(...args2) {
+                return curried.apply(this, args.concat(args2));
+            };
+        }
+    };
+}
+
+fetchData = curryWhether(fetchData);
+let API = fetchData(`https://api.weatherapi.com`, `v1`, `current.json?key=`,`cf472f1d99374a7693a112657250806`);
+
+API("Surat")
+    .then(data => console.log(data));
