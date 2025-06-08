@@ -31,6 +31,7 @@ class WhetherApp {
         this.#endPoint = endPoint;
     }
 
+
     setApiKey(key) {
         this.#apiKey = key;
     }
