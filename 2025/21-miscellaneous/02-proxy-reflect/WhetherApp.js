@@ -3,6 +3,13 @@
  *   https://api.weatherapi.com/v1/current.json?key=cf472f1d99374a7693a112657250806&q=Surat&aqi=nov
  */
 
+
+function* generateSequences() {
+    for (let i = 0; i < 10; i++) {
+        yield i;
+    }
+}
+
 class WhetherApp {
     #baseURL    = '';
     #apiVersion = '';
