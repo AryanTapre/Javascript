@@ -17,6 +17,7 @@ class WhetherApp {
     #apiKey     = '';
     location    = '';
     
+
     constructor(baseURL = "") {
         this.#baseURL = baseURL;
     }
@@ -30,8 +31,7 @@ class WhetherApp {
         this.#baseURL = baseURL;
     }
 
-    setApiVersion(version) {
-        this.#apiVersion = version;
+    setApiVersion(version) {        this.#apiVersion = version;
     }
 
     setEndPoint(endPoint) {

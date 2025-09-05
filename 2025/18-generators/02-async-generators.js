@@ -83,7 +83,7 @@ async function* fetchUsers(githubUsernames) {
 (async() => {
     const iterator = fetchUsers(githubUsernames);
     let result = await iterator.next();
-
+    
     while(!result.done) {
         console.log(result);
         result = await iterator.next()    

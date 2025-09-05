@@ -38,7 +38,6 @@ if ("0" === 0) {
 console.log( 1 <= 0 );
 
 
-
 let age = 18;
 let message;
 
