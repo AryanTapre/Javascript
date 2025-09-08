@@ -55,3 +55,19 @@ function showBook({"book-name":bookname, author, editon, price, firstLaunch="201
 }
 
 showBook(book);
+
+
+//=========================== example===============================
+let Options = {
+  title: "Elon Musk",
+  price: "$500",
+  edition: "1"
+};
+
+let {
+    title:t = 100,
+    price:p,
+    edition:e
+} = Options;
+
+console.log(`${p}`);

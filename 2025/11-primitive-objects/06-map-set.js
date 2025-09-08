@@ -8,7 +8,31 @@ const toInsert = [
     [5, "five"]
 ];
 
-const myMap = new Map( toInsert );
+const myMap = new Map(toInsert);
+
+
+myMap[Symbol.iterator] = function() {
+  const keys = this.keys();
+  return {
+    next: () => {
+      const {value: key, done} = keys.next();
+      if (done) {
+        return {done: true};
+      }
+      console.log(`I'm iterating...`);
+      
+      return {
+        done: false,
+        value: this.get(key)  
+      };      
+    }  
+  };         
+}
+
+for (const val of myMap) {
+  console.log(val);
+  
+}
 
 console.log( myMap.get(4) );
 myMap.set("aryan", "tapre");
@@ -63,3 +87,13 @@ let doublePrices =  Object.fromEntries(
 );
 
 console.log(doublePrices);
+
+const ec = Object.entries(prices)
+ .map((value, index, array) => {
+    return [value[0], value[1] * 2] 
+ });
+
+const oj = Object.fromEntries(ec);
+console.log(oj);
+
+ 

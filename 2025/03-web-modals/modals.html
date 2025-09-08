@@ -12,6 +12,12 @@
 
         // prompt
     let data = window.prompt("what is you name");
+    console.log(`typeOf data = ${typeof data}`);
+    
+    if (data.length == 0) {
+        console.log(`data is empty!`);
+    }
+
     if(data === null) {
         console.log("cancel");   
     } else {

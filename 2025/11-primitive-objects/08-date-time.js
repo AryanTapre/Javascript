@@ -10,7 +10,7 @@ let Dec311969 = new Date(-24 * 3600 * 1000); // Dates before January 1, 1970. i.
 console.log(Dec311969);
 
 /**NOTE: TIMESTAMP
- *  A number of milliseconds that has passed since the beginning of 1970s is called "TimeStamp".
+ *  A number of milliseconds that has passed since the beginning of Jan 1st of  1970s is called "TimeStamp".
  */
 
 console.log(new Date().getFullYear());
@@ -43,11 +43,30 @@ console.log( today.getDate() );
 let newDate = new Date();
 console.log(+newDate);
 
-console.log( Date.parse("2024-07-25T00:12:45.") );
+console.log( Date.parse("2024-07-25T00:12:45") );
 
 const currentVal = new Date();
 
 console.log(`${currentVal.getHours()} H : ${currentVal.getMinutes()} M : ${currentVal.getSeconds()} S`);
+
+
+console.log(Date.now());
+
+let arDate = new Date("2025-09-08");
+console.log(arDate.getUTCFullYear());
+
+//==================================*********************==============================
+
+
+console.log("dealing with time...");
+const dateNow = new Date();
+console.log(dateNow);
+console.log( dateNow.getHours() );
+
+
+
+
+
 
 
 

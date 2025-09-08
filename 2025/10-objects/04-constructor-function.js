@@ -20,7 +20,7 @@ console.log(User2);
 
 // constructor mode test: new.target
 function newUser(name, age) {
-    if(!new.target) return new newUser(name, age)
+    if(!new.target) return new newUser(name, age);
     this.name = name,
     this.age = age,
     this.getInfo = function() {

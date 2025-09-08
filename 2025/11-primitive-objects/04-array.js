@@ -187,7 +187,7 @@ console.log( tesla.findLastIndex((value, index, array) => value === "model-x" ) 
 
 // IMPORTANT: filter()
 
-console.log( tesla.filter((value, index, array) =>  typeof value == "string" ));
+console.log( tesla.filter((value, index, array) =>  typeof value == "string" ) );
 
 
 // NOTE: TRANSFORM AN ARRAY

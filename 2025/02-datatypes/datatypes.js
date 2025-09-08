@@ -3,6 +3,7 @@
 
 // Number
     let age = 22;  // max (2^53-1) NaN 
+    // Infinity, - Infinity, NaN 
 
 // bigInt
     let invoiceNumber = 12121231232323n; // arbitary values
@@ -16,7 +17,7 @@
     let isGreaterNo = 4 > 1;
 
 // null
-    let shoePrices = null;
+    let shoePrices = undefined;
 
 // undefined
     let address; // Default is "undefined"
@@ -44,12 +45,3 @@ console.log(typeof undefined);
 console.log(typeof Symbol);
 console.log(typeof Object);
 console.log(typeof alert);
-
-
-
-
-
-
-
-
-

@@ -46,4 +46,6 @@ console.log(Symbol.keyFor(g2));
 console.log("hello world");
 
 
+let a1 = Symbol("a2");
+console.log(a1 );
 

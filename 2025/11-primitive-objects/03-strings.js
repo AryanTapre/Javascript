@@ -34,6 +34,7 @@ console.log("Aryan".toLocaleUpperCase());
 console.log("Tapre".toUpperCase());
 
 
+
 //FIXME: Searching a string
 
 console.log(single.indexOf("string"));

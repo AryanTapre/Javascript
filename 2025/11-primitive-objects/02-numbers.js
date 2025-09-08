@@ -1,5 +1,14 @@
 import readline from 'readline';
+import { isNumber } from 'util';
 import { isStringObject } from 'util/types';
+
+
+console.log(1e-3);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(Number.MIN_SAFE_INTEGER);
+
+
+
 
 /** NOTE:
  *  https://javascript.info/number
@@ -57,7 +66,6 @@ let sum = 0.1 + 0.2;
 console.log(sum.toFixed(1)) ;
 
 
-
 //NOTE: ParseInt and parseFloat
 
 console.log( parseInt('100px') );
@@ -98,10 +106,8 @@ function customRandom(minR, maxR) {
 }
 console.log(customRandom(5, 10));
 
-
 const bina = 1..toString(2);
 console.log("bina = " + bina);
-
 
 let valx = 10.1234567891233138;
 console.log(valx);
