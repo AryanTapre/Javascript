@@ -93,10 +93,6 @@ for (let x of dt) {
 // }
 
 
-
-
-
-
 function consumeResource() {
     x = {
         name: "x",
@@ -113,10 +109,14 @@ const registry = new FinalizationRegistry((x="I'm no more") => {
 })
 
 
-
 let data = consumeResource();
 registry.register(data);
 data = null;
 
 
-
+// The arguments Variables
+function showNames() {  
+  console.log(arguments);      
+  console.log(arguments.length);      
+}
+showNames("Terminal", "Output");

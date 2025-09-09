@@ -50,3 +50,25 @@ console.log(test);
     
 }();
 
+
+function outer() {
+  let secret = "aryan-secret";
+
+  return {
+    getSecret: () => secret,
+    setSecret: (val) => secret = val,
+  };
+}
+
+// const api = outer();
+// api.getSecret();
+// api.setSecret(1);
+
+function outer() {
+    let x = 123;
+    return function inner() { return x; };
+  }
+  
+  const inner = outer();
+  console.dir(inner);  // shows [[Scopes]] in Node.js console
+  
