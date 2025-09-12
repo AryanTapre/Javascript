@@ -40,7 +40,8 @@ let user = {
     age: 22,
     toString() {
         return `name: ${this.name},age: ${this.age}`;
-    }
+    },
+    
 }
 
 const newObj = user.toString();

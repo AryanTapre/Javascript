@@ -93,3 +93,24 @@ console.log("After defining Object.defineProerty =>");
 
 console.log( Object.getOwnPropertyDescriptors(Object.prototype.hasOwnProperty) );
 
+
+
+
+//=====================================
+const animal = {
+    eats: true,
+    walk() {
+        console.log("Animal walks");   
+    }
+};
+
+const rabit = Object.create(animal);
+rabit.jumps = true;
+console.log(rabit.eats);
+
+rabit.walk();
+
+console.log(Object.getPrototypeOf(rabit));
+console.log(Object.getPrototypeOf(animal));
+
+

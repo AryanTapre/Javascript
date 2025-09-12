@@ -7,6 +7,7 @@ function User(name, age) {
     this.name = name,
     this.age = age
 }
+
 let aryan = new User("aryan", 22);
 console.log(aryan);
 

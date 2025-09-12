@@ -49,4 +49,22 @@ console.log( x() );
 console.log(createCounter.constructor);
 console.log(createCounter.prototype.constructor);
 
+/**
+ * Named function expression:
+ * 1. function can refer it self from inside good for  recusrive sol's
+ * 2. this function is'nt accessible from Outside ( outer lexical environment )
+ */
+
+let hello = function fund(who) {
+  if (who) {
+    console.log(`Hola, ${who}`);
+  } else {
+    fund("aryan");
+  }      
+}
+
+
+let welcome = hello;
+hello = null;
+welcome();
 

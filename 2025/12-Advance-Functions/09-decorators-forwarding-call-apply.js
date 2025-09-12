@@ -1,6 +1,9 @@
 // NOTE: https://javascript.info/call-apply-decorators
 
-
+/**
+ * CALL FORWARDING,
+ * Passing all the arguments along with context to another function is called 'Call Forwarding'.
+ */
 
 //IMPORTANT: CALL FORWARDING, DECORATORS
 function logger(func) {
@@ -22,6 +25,12 @@ function logger(func) {
 
 function callme(name) {
     console.log("My name is : ", name);
+    let i = 0;
+    while (i <= 1000) {
+        i++;
+    }
+    console.log("execution of callme() accomplished!.");
+    
 }
 
 const x = logger(callme);
@@ -86,11 +95,36 @@ function cachingDecorator(func) {
         if (cache.has(...arguments)) {
             return cache.get(...arguments);
         }
-        const result = func.call(this,...arguments);  // NOTE: call forwarding wiht all the arguments
+        const result = func.call(this,...arguments);  // NOTE: call forwarding with all the arguments
         cache.set(...arguments, result);
         return result;
     };
 }
 
- Worker.slow = cachingDecorator(Worker.slow);
+Worker.slow = cachingDecorator(Worker.slow);
 console.log( Worker.slow(1));
+
+
+function greet(name) {
+  console.log(`Hola, ${name}`);
+  
+}
+
+function throttle(func, delayInMs) {
+  let lastCall = 0;
+  
+  return function(...args) {
+    const now = Date.now();
+    if (now - lastCall >= delayInMs) {
+      console.log(`now: ${now} \n lastcall: ${lastCall}`);
+      lastCall = now;      
+      func.apply(this, args); // NOTE: Call Forwarding...
+    }
+  };
+}
+
+let greetme = throttle(greet, 5000);
+setInterval(() => {
+  greetme("aryantapre");
+},5000)
+

@@ -35,27 +35,56 @@ group.showList();
 let user = {
     name: "aryan",
     sayHi() {
-        console.log(`HI, ${this.name}`);
+        console.log(`HI Buddy, ${this.name}`);
     }
 }
 
-function defer(func, delayWith) {
-    return function(...args) {
-        // let ctx = this;
-        // console.log(this);
 
-        // setTimeout( function() {
-        //     func.call(ctx);
-        // }, delayWith )        
+function defer(func, delay) {
+  return function(...args) {
+    console.log("this context:", this);
+    
+    const currentContext = this;
+    setTimeout(function() {
+      func.apply(currentContext,args);    
+    }, delay)
 
-        setTimeout(() => {    //NOTE: ARROW FUNCTION IS MORE CLEANER
-            func.apply(this, ...arguments);
-        }, delayWith);
-    }      
+    // setTimeout(() => {
+    //   func.apply(this, args);    
+    // }, delay);
+  }
 }
 
+
+
 const oneSec = defer(user.sayHi, 1000);
-oneSec.call(user);
+let x = oneSec.bind(user);
+x();
+
+
+
+
+
+
+
+
+// function defer(func, delayWith) {
+//     return function(...args) {
+//         // let ctx = this;
+//         // console.log(this);
+
+//         // setTimeout( function() {
+//         //     func.call(ctx);
+//         // }, delayWith )        
+
+//         setTimeout(() => {    //NOTE: ARROW FUNCTION IS MORE CLEANER
+//             func.apply(this, ...arguments);
+//         }, delayWith);
+//     }      
+// }
+
+// const oneSec = defer(user.sayHi, 1000);
+// oneSec.call(user);
 
 
 
@@ -74,5 +103,13 @@ dt.forEach(sendMeWithDt);
 
 
 
+const getCurrentContext = () => {
+  console.log(`getCurrentContext :`);
+  if (this === globalThis) {
+    console.log('Yeah!, its global context');
+  } else {
+    console.log(`God Damn!, It isn't Global`);
+  }
+}
 
-
+getCurrentContext();

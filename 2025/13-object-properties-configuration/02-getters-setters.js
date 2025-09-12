@@ -14,6 +14,14 @@ user.fullName = "Aryan Tapre";
 console.log( user.fullName );
 
 
+console.log(Object.getOwnPropertyDescriptors(user));
+
+
+
+
+
+
+
 // NOTE:
 let user2 = {
     name: "John",

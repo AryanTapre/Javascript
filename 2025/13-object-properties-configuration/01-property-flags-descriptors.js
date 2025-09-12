@@ -1,3 +1,5 @@
+//"use strict"
+
 //FIXME: https://javascript.info/property-descriptors
 
 let user = {};
@@ -104,4 +106,50 @@ victus.ram = "32GB";
 console.log( Object.getOwnPropertyDescriptors(victus) );
 
 
+
+
+//=============================================================
+let myObj = {
+    name : "aryantapre",
+    profession: "Deals with Software",
+};
+
+
+const copyMyObj = Object.assign({}, myObj) 
+
+console.log("Everything is Akin here!");
+
+for (const prop in copyMyObj) {
+  console.log(`${prop}: ${copyMyObj[prop]}`);
+}
+
+console.log(JSON.stringify(Object.getOwnPropertyDescriptors(copyMyObj), null, 2));
+
+if (copyMyObj === myObj) {
+  console.log("they are same ");
   
+}
+
+copyMyObj.name = "zookeeper";
+console.log(myObj);
+
+
+
+Object.defineProperty(myObj, "name", {
+    writable: true,
+    configurable: false,
+})
+
+
+delete myObj.name ;
+console.log(myObj);
+
+Object.defineProperty(myObj, "name", {
+    
+    writable: false
+})
+
+console.log(Object.getOwnPropertyDescriptor(myObj, "name"));
+
+
+
