@@ -8,11 +8,6 @@ console.log(obj.__proto__ == Object.prototype);
 console.log(obj.__proto__.__proto__ === null);
 
 
-
-
-
-
-
 // TODO: BORROWING Object Methods....
 function func() {
     console.log("before: " +arguments);
@@ -34,3 +29,5 @@ let objx = new Object({
 objx.join = Array.prototype.join;
 
 console.log(objx.join(','));
+
+console.log(Object.prototype.constructor.prototype);

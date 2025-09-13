@@ -114,3 +114,43 @@ console.log(Object.getPrototypeOf(rabit));
 console.log(Object.getPrototypeOf(animal));
 
 
+console.log("checking the default prototypes ==>");
+
+const obj1 = { username: "aryant_x" };
+const obj2 = new Object({});
+const obj3 = Object.create({});
+
+console.log(Object.getPrototypeOf(obj1));
+console.log(Object.getPrototypeOf(obj2));
+console.log(Object.getPrototypeOf(obj3));
+
+
+
+class CollectPrototypes {
+  #sourceObject;
+  constructor(obj) {
+    this.#sourceObject = obj;  
+  }
+  
+  #findPrototype() {
+    let prototypeArray = [];
+    let currentProtoype = Object.getPrototypeOf(this.#sourceObject);
+    
+    while (currentProtoype != null) {
+       prototypeArray.push(currentProtoype);
+       currentProtoype =  Object.getPrototypeOf(currentProtoype); 
+    }
+    return prototypeArray;  
+  }
+    
+  getPrototype() {
+    return this.#findPrototype();        
+  } 
+};
+
+
+const collectPrototypes = new CollectPrototypes(fortuner);
+for (const prototype of collectPrototypes.getPrototype()) {
+  console.log(prototype); 
+}
+

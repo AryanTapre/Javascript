@@ -29,18 +29,19 @@ user.aryan();
 
 //console.log(User.IsClassConstructor);
 
-setTimeout(function()  {
-    user.sayHi();
-    
-}, 100);
+class Button {
+    constructor(value) {
+        this.value = value;
+//        this.click = this.click.bind(this)
+    }
 
-
-
-function UserX(name) {
-    this.name = name;
-    this.hello = function sayHi() {
-        console.log(this.name);
-        
+    click = () => {
+        console.log(`this inside click method: ${Object.getOwnPropertyNames(Button.prototype)}`);        
+        console.log("button clicked:" + this.value);
     }
 }
 
+let button = new Button("Register");
+setTimeout(button.click, 1000);
+
+console.log(Object.getOwnPropertyDescriptors(Button));

@@ -33,8 +33,3 @@ const article = Article.create("aryantapre");
 console.log(article.title);
 console.log(article.date);
 
-
-
-
-
-

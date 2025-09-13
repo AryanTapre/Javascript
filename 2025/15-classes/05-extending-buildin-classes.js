@@ -1,6 +1,5 @@
 // NOTE: https://javascript.info/extend-natives
 
-import { profile } from "console";
 
 class PowerArray extends Array {
     isEmpty() {
@@ -72,6 +71,14 @@ class ProductArray extends Array {
             }
         })
     }
+
+    filerByPrice(price) { //  <= price
+        return this.filter((value, index, Array) => {
+            if (value.price <= price) {
+                return value;
+            }
+        })
+    }
 }
 
 
@@ -83,6 +90,9 @@ const products = new ProductArray(
 
 console.log( products.totalPrice() );
 console.log(products.filerByCategory("laptop"));
+console.log(products.filerByPrice(68000));
+
+
 
 
 

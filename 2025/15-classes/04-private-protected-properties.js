@@ -15,7 +15,7 @@ class CoffeeMachine {
     }
     
     set waterAmount(waterAmount) {
-        this.#waterAmount = (waterAmount > this.#WATER_LIMIT) ? 0 : waterAmount;
+        this.#waterAmount = (waterAmount > this.#WATER_LIMIT) ? this.#waterAmount : waterAmount;
     }
     
     get waterAmount() {
@@ -72,14 +72,14 @@ class User {
         return password.length >= 8;
     }
 
-    #resetPassword(newPassword) {
+    #resetPasswordp(newPassword) {
         this.#password = newPassword;
     }
 
     resetPassword(oldPassword, newPassword) {
         if (oldPassword !== newPassword) {
             if (this._validatePassword(newPassword)) {
-                this.#resetPassword(newPassword)
+                this.#resetPasswordp(newPassword);
             }
             
         } else {
@@ -93,3 +93,4 @@ let aryan = new User("aryantapre", "12345678");
 console.log(Object.getOwnPropertyDescriptors(aryan));
 
 
+console.log(Object.getOwnPropertyNames(User.prototype));

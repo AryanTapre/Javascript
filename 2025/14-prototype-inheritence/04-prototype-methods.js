@@ -1,73 +1,33 @@
-// NOTE: https://javascript.info/prototype-methods
+// NOTE: https://javascript.info/native-prototypes
 
-let animal =  {
-    eat: true,
-    dance: true
+let obj = new Object();
+
+console.log(Object.getPrototypeOf(obj) == Object.prototype);
+console.log(obj.__proto__ == Object.prototype);
+
+console.log(obj.__proto__.__proto__ === null);
+
+
+// TODO: BORROWING Object Methods....
+function func() {
+    console.log("before: " +arguments);
+    Array.prototype.push.call(arguments, "aryantapre");
+    console.log(arguments);
 };
-
-let Hero = Object.create(animal, {
-  name: {
-    value: "doggy",
-    enumerable: true,
-    writable: true,
-    configurable: true
-  }  
-})
-
-for (const key in Hero) {
-    console.log(key);
-    
-}
+func(1,2);
 
 
-
-// IMPORTANT: VERY VERY PLAIN OBJECT...
-let user =  Object.create(null);
-console.log(Object.getPrototypeOf(user));
+console.log("Native prototype borrowing =>");
 
 
-// TODO: 1
-/**
- * There’s an object dictionary, created as Object.create(null), to store any key/value pairs.
-
-Add method dictionary.toString() into it, that should return a comma-delimited list of keys. Your toString should not show up in for..in over the object.
- * 
- */
-console.log("==>");
-
-let dictionary = Object.create(null, {
-    toString: {
-        enumerable: false,
-        writiable: false,
-        configurable: false,
-        value: function() {
-            return Object.keys(this).join(",");
-        }
-    }
+let objx = new Object({
+    0: "aryan",
+    1: 22,
+    length: 2,
 });
 
-dictionary.apple = "apple";
-dictionary.__proto__ = "test";
+objx.join = Array.prototype.join;
 
-for (let x in dictionary) {
-    console.log(`${x}: ${dictionary[x]}`);    
-}
+console.log(objx.join(','));
 
-
-
-
-function outer() {
-    const outer = "outer";
-
-    function demo() {
-        let proto = this;
-        while( (proto = Object.getPrototypeOf(proto)) != null ) {
-            console.log(proto);
-        }
-        if(proto == null) {
-            console.log(proto);
-        }   
-    }
-    demo();   
-}
-outer();
+console.log(Object.prototype.constructor.prototype);
