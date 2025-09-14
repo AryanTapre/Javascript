@@ -1,6 +1,9 @@
 // NOTE: https://javascript.info/extend-natives
 
 
+const b = new Object();
+console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(b)));
+
 class PowerArray extends Array {
     isEmpty() {
         return this.length === 0;   
@@ -11,10 +14,21 @@ const arr = new PowerArray();
 arr.push("aryan");
 arr.unshift("tapre");
 
+
+
 console.log(arr.isEmpty());
 
 console.log(arr.constructor == PowerArray);
+console.log(Object.getPrototypeOf(arr));
 
+console.log("===>");
+
+function demo() {
+    hola : () => {}
+}
+demo.aryan = "aryan";
+const d = new demo();
+console.log(Object.getOwnPropertyDescriptors(Object.getPrototypeOf(d).constructor));
 
 
 class Custom extends Object {
@@ -95,4 +109,41 @@ console.log(products.filerByPrice(68000));
 
 
 
+console.log("\n =====> \n");
+
+class A {
+    name;
+    constructor(name) {
+        this.name = name;
+        console.log(`constructor A: ${this.name}`);
+        
+    }
+
+    getName() { return `${this.name}` }
+}
+
+class B extends A {
+    nameb;
+    constructor(nameb) {
+        super();
+        this.nameb = nameb;
+    }
+    getNameb() { return `${this.nameb} hola` }
+}
+
+
+const be = new B("aryanb");
+console.log(be.getNameb());
+
+
+A.prototype = {
+    constructor: A,
+    getName: function () {}
+}
+
+B.prototype = {
+    constructor: B,
+    getNameb: function () {},
+    [[prototype]]: A.prototype,
+}
 

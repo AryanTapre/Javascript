@@ -11,11 +11,32 @@ class User {
     }
 
     [Symbol.hasInstance](obj) {
-        if (obj._name) return true;
+        //if (obj._name) return true;
+        if (obj.__proto__ === User.prototype.constructor) {
+            return true;
+        }
+        return false;
     }
 };
 
+class Bob {}
+const a1 = new User();
+console.log(a1 instanceof Bob);
+
+
+
 const aryan = new User("aryan");
+
+function isInstanceOf(className) {
+    const object = this;
+    if (object.__proto__ === className.prototype) return true;
+    return false;
+}
+
+
+console.log(isInstanceOf.call(aryan, Bob));
+
+
 
 console.log(aryan instanceof User);
 console.log(aryan instanceof Object);
@@ -61,6 +82,7 @@ console.log( processPayment(new PayPay()) );
 class A {}
 class B extends A {}
 
+
 console.log(A.isPrototypeOf(B));  // Returns TRUE if ObjA is somewhere in prototype chain of ObjB
 console.log(B.prototype.__proto__ == A.prototype);
 console.log(B instanceof Object);
@@ -73,9 +95,22 @@ let DataX = {
     sonOf: "Elon Musk"
 }
 
-let objToString = Object.prototype.toString;
+const  objToString = Object.prototype.toString;
 
 console.log( objToString.call(DataX) );
-
+console.log(Object.toString(DataX));
 
  
+be = {
+    __proto__: B.prototype,
+    name: undefined,
+    nameb : "aryanb"
+}
+
+
+
+B.prototype = {
+    constructor: B,
+    getName: function() {},
+    __proto__ : A.prototype 
+}

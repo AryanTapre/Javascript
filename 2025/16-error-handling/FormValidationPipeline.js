@@ -22,6 +22,8 @@ class AppResponse extends Error {
         this.success = success;
         this.error = error;
         this.data = data;
+        Error.stackTraceLimit;
+        Error.captureStackTrace(this, this.constructor)
     }
 }
 

@@ -61,6 +61,56 @@ cx.second();
 
 
 
+//--------------------------------------------------
+
+
+const timeStampMixin = {
+    setCurrentTimeStamp(timeStampField) {
+        this.metaData[timeStampField] = `${new Date().toLocaleDateString()}:T${new Date().toLocaleTimeString()}`    
+        
+    }
+}
+
+class Post {
+    #content;
+    #postType;
+    metaData = {};
+    constructor() {
+        this.#postType = "collage"
+        this.metaData = {
+            "createdAt": null,
+            "updatedAt": null,
+            "deletedAt": null
+        }
+    }
+
+    create(content) {
+        this.#content = content;
+        this.setCurrentTimeStamp("createdAt")
+        
+        
+        return 'content added.';
+    }
+
+    edit(newContent) {
+        this.#content = newContent;
+        this.setCurrentTimeStamp("editedAt");
+        return 'content edited.';
+    }
+
+    get timeStamp() {
+        return this.metaData;
+    }
+}
+
+Object.assign(Post.prototype, timeStampMixin);
+const post = new Post();
+console.log(post.create("TypeScript limitations"));
+
+console.log(post.edit("There is always a cost to pay to get good things"));
+
+console.log(post.timeStamp);
+
 
 
 

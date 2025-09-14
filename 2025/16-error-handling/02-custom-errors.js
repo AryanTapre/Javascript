@@ -5,13 +5,34 @@
  *  wiht all Erroneous checks.
 */
 
+
+
 class ReadError extends Error {
     constructor(message, cause) {
         super(message);
         this.cause = cause;
         this.name = "ReadError";
+        this.message = message;
+        Error.captureStackTrace(this, this.constructor);
+    }  
+
+    getStack() {
+        return this.stack;
     }
 };
+
+
+try {
+    throw new ReadError("I don't know", "shit");
+} catch (error) {
+    console.log(`I'm here -> ${error}`);
+    //console.log(Object.getOwnPropertyNames(error));
+    Object.getOwnPropertyNames(error).forEach((property) => {
+        console.log(`${property}: ${error[property]}`);
+    })
+        
+}
+
 
 class ValidationError extends Error {
     constructor(message) {
@@ -94,3 +115,4 @@ try {
 }
 
 
+new Error("roo",{cause},)
