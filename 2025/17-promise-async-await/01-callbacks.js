@@ -27,7 +27,7 @@ function fetchData(url, callback) {
 
 }
 
-fetchData("https://api.github.com/users/AryanTapreeerr", (err, data) => {
+fetchData("https://api.github.com/users/AryanTapre/", (err, data) => {
 
     console.log("... inside fetchData() callback");
     
@@ -45,3 +45,103 @@ function hola() {
     console.log("hola to you sir...");
 } 
 hola();
+
+
+
+//==============================================
+function loadScript(scriptURL, callback) {
+    const script = document.createElement('script');
+    script.src = scriptURL;
+    script.onload = () => {
+        callback(script);        
+    }
+}
+
+loadScript("https://scripts.aryantapre.in/v1/auth.js",(script) => {
+    console.log(script);
+
+    loadScript("https://google.com/", (script) => {
+        loadScript("https://aryantapre.github.io", (script) => {
+
+        } );           
+    })
+})
+
+
+//NOTE: Error-first callback style
+function loadScript2(scriptURL, callback) {
+    const newScript = window.document.createElement("script");    
+    newScript.src = scriptURL;
+
+    newScript.onload = () => {
+        callback(null, newScript); // Successfull loading of newScript.
+    }
+    newScript.onerror = () => {
+        callback(new Error("some error",{ cause: "cause"}));
+    }
+}
+
+
+loadScript("1.js",(error, script) => {
+    if (error) {
+        handleError(error);
+    } else {
+        loadScript("2.js", (error, script) => {
+            if (error) {
+                handleError(error);
+            } else {
+                loadScript("3.js", (error, script) => {
+                    if (error) {
+                        handleError(error);
+                    } else {
+                        loadScript("4.js", (error, script) => {
+                            if (error) {
+                                handleError(error);
+                            } else {
+                                loadScript("5.js", (error, script) => {
+                                    if (error) {
+                                        handleError(error);
+                                    } else {
+                                        loadScript("6.js", (error, script) => {
+                                            if (error) {
+                                                handleError(error, script);
+                                            } else {
+                                                loadScript("7.js", (error, script) => {
+                                                    if (error) {
+                                                        handleError(error);
+                                                    } else {
+                                                        loadScript("8.js", (error, script) => {
+                                                            if (error) {
+                                                                handleError(error);
+                                                            } else {
+                                                                loadScript("9.js", (error, script) => {
+                                                                    if (error) {
+                                                                        handleError(error);
+                                                                    } else {
+                                                                        loadScript("10.js", (error, script) => {
+                                                                            if (error) {
+                                                                                handleError(error);
+                                                                            }
+                                                                            console.log("THE END GAME!!!!");
+                                                                            
+                                                                        })
+                                                                    }
+                                                                }) 
+
+                                                                
+                                                            }
+                                                        })
+                                                    }
+                                                })
+                                            }
+                                        })
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    }
+});
